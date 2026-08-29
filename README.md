@@ -51,38 +51,6 @@ can be used to predict the final price of used cars.
 
 The data was collected from AutoTrader and Carfax.
 
-### Dataset Dimensions
-
-- Observations: 52
-- Total columns: 27
-- Explanatory variables: 24
-- Target variable: `price`
-- Additional identifier/metadata columns: `id`, `link`
-
-## Dataset Structure
-
-### Observational Unit
-
-Each row represents one used-car observation/listing.
-
-Therefore:
-
-> 1 row = 1 used car
-
-The target variable is `price`, while the remaining vehicle-related variables
-serve as potential explanatory variables.
-
-## Variable Classification
-
-| Category | Variables |
-|---|---|
-| Target | `price` |
-| Categorical predictors | `brand`, `model`, `wheel_drive`, `engine_type` |
-| Numerical predictors | `year`, `miles`, `city_mileage`, `highway_mileage`, `horsepower`, `torque`, `engine_capacity_litre`, `fuel_capacity`, `num_cylinder`, `num_owners`, `speed_levels`, `front_headroom`, `front_legroom`, `rear_headroom`, `rear_legroom`, `service_records` |
-| Identifier | `id` |
-| Metadata | `link` |
-| Constant features | `num_seat`, `doors`, `type` |
-| Severely incomplete feature | `condition` |
 
 ## Key Initial Findings
 
@@ -95,14 +63,5 @@ serve as potential explanatory variables.
 - `id` was identified as an identifier rather than a predictive feature.
 - `link` was identified as metadata and was also used to investigate duplicate listings.
 - Two observations were found to represent the same vehicle and will require duplicate handling.
-
-### Note on Variable Types
-
-Variable classification was based on the semantic meaning of the Variables,
-not solely on their pandas storage dtype.
-
-For example, `wheel_drive` is stored as `int64`, but its values represent
-drivetrain categories and are therefore treated as categorical rather than
-continuous numerical data.
 
 
