@@ -64,7 +64,7 @@ Final Findings & Limitations
 
 ```
 
-##Data Preprocessing
+## Data Preprocessing
 
 The dataset was inspected for:
 
@@ -80,7 +80,7 @@ Detailed preprocessing decisions are documented in:
 
 docs/data_quality_report.md
 
-##Feature Selection
+## Feature Selection
 
 Correlation analysis was initially used to identify numerical variables associated with price.
 
@@ -99,12 +99,12 @@ Multicollinearity was then assessed using Variance Inflation Factor (VIF).
 
 The final reduced model showed low VIF values for the selected predictors, indicating that severe multicollinearity was not present.
 
-##Models
-###Model 1 — Reduced Numerical Model
+## Models
+### Model 1 — Reduced Numerical Model
 
 The baseline model used the selected numerical predictors.
 
-###Model 2 — Numerical + Vehicle Identity
+### Model 2 — Numerical + Vehicle Identity
 
 The second model added:
 
@@ -115,7 +115,7 @@ These categorical variables were one-hot encoded before regression.
 
 The purpose was to determine whether vehicle identity provides additional predictive information beyond the numerical characteristics.
 
-##Results
+## Results
 Metric	Model 1	Model 2
 Training MAE	1,938.21	894.59
 Testing MAE	2,307.70	1,339.78
@@ -127,7 +127,7 @@ Model 2 substantially reduced prediction error compared with the baseline model.
 
 However, the very large difference between training and testing R² indicates that the richer model does not generalize well to unseen observations.
 
-##Key Findings
+## Key Findings
 Vehicle year had a moderate positive relationship with price.
 Mileage had a moderate negative relationship with price.
 Horsepower showed a positive relationship with price.
@@ -138,7 +138,7 @@ The very low testing R² of Model 2 indicates limited predictive generalization.
 The small dataset size is an important limitation of the analysis.
 
 
-##Model Limitations
+## Model Limitations
 
 The results should be interpreted cautiously because the dataset is very small.
 
@@ -148,7 +148,7 @@ This creates a high risk of overfitting and makes the evaluation sensitive to th
 
 Therefore, the model should be viewed primarily as an analytical exercise rather than a production-ready car price prediction system.
 
-##Conclusion
+## Conclusion
 
 The analysis demonstrates that vehicle identity, particularly brand and model, contains useful information for explaining used-car prices.
 
