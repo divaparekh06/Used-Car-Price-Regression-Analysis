@@ -1,67 +1,63 @@
-# Used Car Price Regression using multiple variable regression
+# Used Car Price Prediction using Multiple Linear Regression
 
-## 1. Project Overview
+## Overview
 
-This project focuses on analyzing a used-car dataset and developing a multiple
-linear regression model to predict vehicle prices based on vehicle
-characteristics and history.
+This repository contains a focused regression analysis for predicting used-car prices using vehicle characteristics.
 
-The project emphasizes the complete machine learning workflow, including:
+The primary objective was to understand how selected vehicle attributes relate to price and evaluate whether a Multiple Linear Regression model can provide useful price predictions.
 
-- data understanding
-- data quality assessment
-- preprocessing
-- exploratory data analysis
-- feature preparation
-- multiple linear regression
-- model evaluation
-- regression diagnostics
-- interpretation of results
+The analysis focuses on:
+- Data cleaning and preprocessing
+- Exploratory analysis
+- Feature selection
+- Multicollinearity analysis using VIF
+- Multiple Linear Regression
+- Model evaluation
+- Residual analysis
+- Comparison of two regression models
 
-## Problem Statement
-
-Used-car prices depend on multiple vehicle characteristics such as mileage,
-engine specifications, vehicle age, ownership history, and other attributes.
-
-The objective of this project is to investigate the relationship between these
-characteristics and used-car prices and develop a multiple linear regression
-model capable of predicting vehicle price.
-
-## Objective
-
-The primary objective is to:
-
-1. Understand the structure and quality of the used-car dataset.
-2. Identify and address data-quality issues.
-3. Prepare appropriate numerical and categorical variables for regression.
-4. Investigate relationships between vehicle characteristics and price.
-5. Develop a multiple linear regression model.
-6. Evaluate model performance.
-7. Diagnose the assumptions and limitations of the regression model.
-8. Document the complete analytical workflow.
+---
 
 ## Dataset
 
-The dataset contains information on used cars in the Seattle area and includes
-vehicle characteristics, mileage, engine specifications, ownership information,
-vehicle history, and price.
+The dataset contains information about used vehicles, including:
 
-According to the dataset description, there are 24 explanatory variables that
-can be used to predict the final price of used cars.
+- Brand
+- Model
+- Year
+- Mileage
+- Engine specifications
+- Fuel economy
+- Ownership information
+- Vehicle dimensions
+- Service records
+- Price
 
-The data was collected from AutoTrader and Carfax.
+The dataset used for modelling contained 52 observations initially.
 
+After handling the missing value required for modelling, 51 observations were used in the final model comparison.
 
-## Key Initial Findings
+---
 
-- The dataset contains 52 observations and 27 columns.
-- `price` was identified as the target Variable.
-- `brand`, `model`, `wheel_drive`, and `engine_type` were identified as categorical predictors.
-- `num_seat`, `doors`, and `type` were found to be constant across all observations.
-- `condition` contains 98.08% missing values and is unsuitable for reliable imputation.
-- `speed_levels` contains one missing observation (1.92%) and will be retained for further preprocessing.
-- `id` was identified as an identifier rather than a predictive feature.
-- `link` was identified as metadata and was also used to investigate duplicate listings.
-- Two observations were found to represent the same vehicle and will require duplicate handling.
+## Project Workflow
 
-
+```text
+Raw Dataset
+     ↓
+Data Cleaning & Validation
+     ↓
+Exploratory Data Analysis
+     ↓
+Feature Selection
+     ↓
+Multicollinearity Analysis (VIF)
+     ↓
+Multiple Linear Regression
+     ↓
+Model Evaluation
+     ↓
+Residual Analysis
+     ↓
+Model Comparison
+     ↓
+Final Findings & Limitations
